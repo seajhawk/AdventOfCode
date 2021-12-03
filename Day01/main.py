@@ -1,6 +1,8 @@
-from requests import Request
-from rich import print
+from rich import print, inspect
 
-data = Request(method="get", url="https://adventofcode.com/2021/day/1/input")
+print("Hello World!")
 
-print(data)
+with open('data.txt') as f:
+    lines = f.readlines()
+
+inspect(lines)
