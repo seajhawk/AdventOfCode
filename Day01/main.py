@@ -1,18 +1,19 @@
 from rich import print, inspect
 
-with open('data.txt') as f:
+with open('Day01/data.txt') as f:
     lines = f.readlines()
 
 # inspect(lines)
 
-previous = 0
+previous = None
 largerCount = 0
 
 for line in lines:
-    line = int(line)
-    if line > previous:
-        largerCount +=1
-    previous = line
+    if len(line) > 0:
+        line = int(line)
+        if previous and line > previous:
+            largerCount +=1
+        previous = line
 
 print(f"largerCount = {largerCount}")
 print(f"Length = {len(lines)}")
